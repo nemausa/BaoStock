@@ -1,0 +1,4 @@
+__pycache__
+.codex
+.agents
+a_stock_data/parquet/
