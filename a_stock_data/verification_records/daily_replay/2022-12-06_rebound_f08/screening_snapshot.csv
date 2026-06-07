@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-688221,前沿生物,2022-12-06,17.93,confirmed_rebound,2022-12-06,17.74,1.0710259301014728,10.202931228861344,27.23543888433142,False,4
-688185,康希诺,2022-12-06,180.8,bottom_area,2022-12-06,177.2,2.0316027088036246,7.787810383747185,29.402390438247018,False,4
-002317,众生药业,2022-12-06,28.69,confirmed_rebound,2022-12-06,28.12,2.0270270270270276,8.78378378378378,29.910269192422724,False,1
-603139,康惠股份,2022-12-06,19.21,bottom_area,2022-12-06,19.09,0.6286013619696228,5.290728129910956,29.11251392499072,False,1

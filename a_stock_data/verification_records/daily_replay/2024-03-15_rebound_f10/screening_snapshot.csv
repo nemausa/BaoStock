@@ -1,4 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-301591,肯特股份,2024-03-15,51.08,bottom_area,2024-03-14,49.51,3.1710765501918816,6.786507776206826,29.573257467994313,False,1
-603273,天元智能,2024-03-15,27.46,bottom_area,2024-03-15,26.74,2.69259536275244,4.300673148840696,29.705573080967408,False,2
-688325,赛微微电,2024-03-15,34.92,bottom_area,2024-03-08,33.31,4.833383368357849,8.916241368958266,30.313807531380743,True,1

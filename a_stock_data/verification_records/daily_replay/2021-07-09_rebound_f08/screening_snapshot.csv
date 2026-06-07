@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-603087,甘李药业,2021-07-09,96.77,bottom_area,2021-07-09,95.25,1.595800524934379,2.8346456692913415,29.428761947099353,False,1
-688277,天智航,2021-07-09,25.79,bottom_area,2021-07-09,25.63,0.6242684354272343,2.4580569644947428,29.684499314128953,False,1
-600059,古越龙山,2021-07-09,11.93,bottom_area,2021-07-09,11.65,2.403433476394844,3.004291845493559,27.50466708151836,False,1
-600966,博汇纸业,2021-07-09,11.95,confirmed_rebound,2021-07-05,11.58,3.1951640759930853,9.41278065630397,29.47624847746651,False,1

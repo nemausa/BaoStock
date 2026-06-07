@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-002279,久其软件,2022-11-24,6.06,bottom_area,2022-11-23,5.95,1.8487394957983097,5.042016806722685,27.261613691931537,False,1
-002322,理工能科,2022-11-24,9.51,bottom_area,2022-11-23,9.34,1.8201284796573867,3.426124197002144,28.429118773946367,False,2
-000863,三湘印象,2022-11-24,4.54,bottom_area,2022-11-24,4.54,0.0,11.453744493392062,28.616352201257868,False,2
-000721,西安饮食,2022-11-24,8.09,bottom_area,2022-11-24,7.83,3.3205619412515937,7.151979565772676,31.97219808861859,False,1

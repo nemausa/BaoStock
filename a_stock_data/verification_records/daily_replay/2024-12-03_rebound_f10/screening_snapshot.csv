@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-002045,国光电器,2024-12-03,18.8,bottom_area,2024-12-02,18.1,3.867403314917123,8.232044198895018,28.031809145129216,False,6
-002862,实丰文化,2024-12-03,32.6,bottom_area,2024-12-03,31.36,3.9540816326530677,8.992346938775512,28.139321723189738,False,4
-601019,山东出版,2024-12-03,10.64,bottom_area,2024-11-25,10.22,4.109589041095889,7.0450097847358,28.028169014084497,True,1
-000695,滨海能源,2024-12-03,12.22,bottom_area,2024-11-29,11.83,3.296703296703302,6.339814032121724,30.041395623891187,False,2

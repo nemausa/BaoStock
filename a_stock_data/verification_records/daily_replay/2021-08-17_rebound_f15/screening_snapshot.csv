@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-688356,键凯科技,2021-08-17,189.74,bottom_area,2021-08-17,185.0,2.562162162162167,6.848648648648642,31.93023769225108,False,1
-603232,格尔软件,2021-08-17,14.8,bottom_area,2021-07-28,14.48,2.2099447513812174,8.563535911602212,28.245787908820613,True,1
-603283,赛腾股份,2021-08-17,28.1,bottom_area,2021-08-16,27.52,2.107558139534891,7.3401162790697665,27.57894736842105,False,1
-002600,领益智造,2021-08-17,7.02,bottom_area,2021-07-29,6.7,4.776119402985065,11.641791044776124,27.64578833693304,True,1

@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-300337,银邦股份,2024-11-01,15.82,confirmed_rebound,2024-11-01,15.6,1.4102564102564144,19.230769230769244,27.102803738317753,False,3
-301326,捷邦科技,2024-11-01,57.37,bottom_area,2024-11-01,55.98,2.483029653447661,14.147909967845662,29.655692385021364,False,2
-300489,光智科技,2024-11-01,80.5,confirmed_rebound,2024-11-01,79.92,0.7257257257257236,22.62262262262262,27.92207792207792,False,1
-300656,民德电子,2024-11-01,29.68,confirmed_rebound,2024-11-01,28.9,2.698961937716267,16.228373702422164,31.66233152045401,False,2

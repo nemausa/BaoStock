@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-300614,百川畅银,2021-08-30,41.22,bottom_area,2021-08-27,40.72,1.2278978388998036,4.322200392927304,27.68602379683893,False,1
-688317,之江生物,2021-08-30,50.5,bottom_area,2021-08-30,50.4,0.19841269841270123,4.16666666666667,31.781266919328637,False,1
-688111,金山办公,2021-08-30,251.0,bottom_area,2021-08-30,245.0,2.4489795918367347,6.028571428571421,28.77906976744186,False,1
-300463,迈克生物,2021-08-30,29.24,bottom_area,2021-08-30,29.1,0.481099656357378,2.5429553264604756,27.249999999999996,False,1

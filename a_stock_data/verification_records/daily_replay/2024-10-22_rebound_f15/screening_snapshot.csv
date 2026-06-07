@@ -1,4 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-000850,华茂股份,2024-10-22,4.02,bottom_area,2024-10-21,3.93,2.2900763358778478,5.852417302798981,27.356746765249536,False,1
-601828,美凯龙,2024-10-22,2.86,bottom_area,2024-10-18,2.73,4.761904761904758,5.494505494505491,27.00534759358289,False,1
-688298,东方生物,2024-10-22,31.36,bottom_area,2024-10-18,30.11,4.151444702756559,9.498505479907006,27.428295974933725,True,1

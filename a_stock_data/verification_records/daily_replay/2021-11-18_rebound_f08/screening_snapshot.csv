@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-300688,创业黑马,2021-11-18,38.82,bottom_area,2021-11-18,38.7,0.3100775193798383,5.322997416020659,30.831099195710454,False,2
-002233,塔牌集团,2021-11-18,10.12,bottom_area,2021-11-10,9.79,3.3707865168539337,7.252298263534228,31.77700348432056,True,1
-002554,惠博普,2021-11-18,2.96,bottom_area,2021-11-15,2.88,2.7777777777777803,4.513888888888886,27.088607594936715,False,1
-603069,海汽集团,2021-11-18,14.84,confirmed_rebound,2021-10-29,14.3,3.77622377622377,8.18181818181818,29.03225806451612,True,1

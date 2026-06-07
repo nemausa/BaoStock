@@ -1,3 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-300648,星云股份,2021-08-18,60.32,confirmed_rebound,2021-08-18,59.06,2.1334236369793396,9.600406366407046,28.23815309842041,False,1
-603283,赛腾股份,2021-08-18,27.06,bottom_area,2021-08-18,26.9,0.5947955390334578,5.390334572490717,29.210526315789476,False,1

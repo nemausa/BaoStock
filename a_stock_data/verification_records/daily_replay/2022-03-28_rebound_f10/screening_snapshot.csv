@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-603122,合富中国,2022-03-28,20.51,bottom_area,2022-03-28,19.64,4.429735234215891,7.077393075356418,27.979464613127973,False,1
-601901,方正证券,2022-03-28,6.63,confirmed_rebound,2022-03-09,6.4,3.593749999999993,10.156249999999991,29.51541850220264,True,1
-002222,福晶科技,2022-03-28,14.06,bottom_area,2022-03-16,13.48,4.302670623145401,8.753709198813054,27.056277056277057,True,2
-300540,蜀道装备,2022-03-28,25.31,bottom_area,2022-03-28,25.05,1.037924151696599,4.910179640718564,27.18023255813953,False,2

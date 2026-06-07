@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-000037,深南电A,2021-04-21,8.65,bottom_area,2021-04-15,8.5,1.7647058823529453,5.88235294117647,32.432432432432435,False,1
-002352,顺丰控股,2021-04-21,63.67,bottom_area,2021-04-19,62.66,1.6118736035748564,3.9897861474624965,27.34230055658627,False,1
-688021,奥福科技,2021-04-21,41.03,bottom_area,2021-04-21,41.03,0.0,2.9978064830611673,28.890814558058924,False,1
-600333,长春燃气,2021-04-21,4.84,bottom_area,2021-04-21,4.83,0.20703933747411568,3.1055900621118084,27.368421052631582,False,1
