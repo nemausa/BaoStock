@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+605268,王力安防,2021-06-10,14.25,bottom_area,2021-05-20,14.01,1.713062098501072,8.279800142755175,29.349470499243562,True,1
+002612,朗姿股份,2021-06-10,49.89,bottom_area,2021-06-10,48.44,2.9933938893476526,7.7002477291494715,29.28467153284672,False,1
+300677,英科医疗,2021-06-10,100.1,bottom_area,2021-06-10,99.28,0.8259468170829907,2.8203062046736473,32.40280520187922,False,1

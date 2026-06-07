@@ -1,0 +1,5 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+002016,世荣兆业,2025-02-26,6.03,bottom_area,2025-02-25,5.94,1.5151515151515127,3.1986531986531905,30.281690140845065,False,1
+603007,顺景科技,2025-02-26,7.87,bottom_area,2025-02-26,7.78,1.1568123393316176,7.455012853470426,27.08528584817244,False,1
+300766,每日互动,2025-02-26,52.0,bottom_area,2025-02-25,49.56,4.923325262308309,10.391444713478608,29.70212765957446,True,1
+300422,博世科,2025-02-26,4.31,bottom_area,2025-02-06,4.11,4.866180048661783,6.5693430656934195,30.220713073005083,False,1

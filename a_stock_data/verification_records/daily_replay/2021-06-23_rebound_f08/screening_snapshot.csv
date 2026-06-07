@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+601012,隆基绿能,2021-06-23,79.78,bottom_area,2021-06-23,78.8,1.2436548223350303,4.5812182741116745,29.009009009009013,False,1
+002044,美年健康,2021-06-23,8.89,bottom_area,2021-06-18,8.69,2.3014959723820607,7.134637514384362,30.9220985691574,True,1
+300420,五洋自控,2021-06-23,4.17,bottom_area,2021-06-23,4.15,0.4819277108433632,2.4096385542168584,27.700348432055744,False,1

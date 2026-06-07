@@ -1,0 +1,3 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+600198,大唐电信,2024-11-05,12.7,bottom_area,2024-11-05,12.27,3.5044824775876102,8.231458842705786,27.05112960760999,False,4
+002712,思美传媒,2024-11-05,5.72,bottom_area,2024-11-05,5.46,4.761904761904758,7.326007326007332,28.25229960578187,False,3

@@ -1,0 +1,14 @@
+{
+  "record_date": "2026-03-30",
+  "saved_at": "2026-06-07 21:48:42",
+  "source": "daily_replay",
+  "ranking_rows": 56,
+  "screening_rows": 56,
+  "trend_threshold": 0.07,
+  "drawdown_min": 0.27,
+  "drawdown_max": 0.33,
+  "current_rebound_max": 0.05,
+  "full_rebound_min": 0.2,
+  "min_events": 1,
+  "include_st": false
+}

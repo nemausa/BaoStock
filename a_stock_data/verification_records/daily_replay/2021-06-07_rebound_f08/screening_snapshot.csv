@@ -1,0 +1,5 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+300677,英科医疗,2021-06-07,105.8,bottom_area,2021-06-07,103.33,2.3903996903125897,4.519500629052551,29.645264519643227,False,1
+300696,爱乐达,2021-06-07,38.8,bottom_area,2021-06-04,37.41,3.715584068430903,3.9026998128842583,29.38844847112118,False,1
+605268,王力安防,2021-06-07,14.62,confirmed_rebound,2021-05-20,14.01,4.354032833690217,8.279800142755175,29.349470499243562,True,1
+300561,汇金科技,2021-06-07,11.32,bottom_area,2021-06-04,10.79,4.9119555143651645,6.0240963855421725,27.92251169004677,False,1

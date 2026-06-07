@@ -1,0 +1,5 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+605162,新中港,2025-02-14,6.94,bottom_area,2025-02-05,6.71,3.4277198211624507,6.259314456035766,28.081457663451232,False,4
+300422,博世科,2025-02-14,4.26,bottom_area,2025-02-06,4.11,3.649635036496337,6.5693430656934195,30.220713073005083,False,2
+000421,南京公用,2025-02-14,6.29,confirmed_rebound,2025-02-05,6.03,4.311774461028189,8.78938640132669,30.046403712296975,True,5
+300515,三德科技,2025-02-14,15.09,confirmed_rebound,2025-02-05,14.48,4.212707182320438,9.599447513812146,27.016129032258064,True,1

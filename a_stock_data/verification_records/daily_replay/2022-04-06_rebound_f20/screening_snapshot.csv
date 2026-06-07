@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+600318,新力金融,2022-04-06,10.53,bottom_area,2022-04-06,10.53,0.0,0.0,29.138627187079408,False,1
+605111,新洁能,2022-04-06,139.28,bottom_area,2022-04-06,138.33,0.6867635364707501,4.4531193522735455,30.171630489651687,False,1
+002222,福晶科技,2022-04-06,14.02,bottom_area,2022-03-16,13.48,4.0059347181008835,8.753709198813054,27.056277056277057,True,1

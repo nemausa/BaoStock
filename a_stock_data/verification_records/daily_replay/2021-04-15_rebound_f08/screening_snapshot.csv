@@ -1,0 +1,5 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+000037,深南电A,2021-04-15,8.61,bottom_area,2021-04-15,8.5,1.2941176470588167,3.9999999999999982,32.432432432432435,False,1
+603222,济民健康,2021-04-15,15.56,bottom_area,2021-04-15,15.47,0.5817711700064632,7.62766645119585,30.221019395579614,False,3
+002759,天际股份,2021-04-15,12.35,bottom_area,2021-04-13,12.0,2.9166666666666634,4.916666666666666,28.6563614744352,False,1
+600379,宝光股份,2021-04-15,8.3,bottom_area,2021-04-15,8.26,0.48426150121066497,3.2687651331719083,30.99415204678363,False,1

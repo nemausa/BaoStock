@@ -1,0 +1,2 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+600405,动力源,2021-02-02,5.04,bottom_area,2021-02-02,4.99,1.0020040080160284,5.0100200400801596,28.097982708933717,False,1

@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+000612,焦作万方,2021-07-01,6.9,bottom_area,2021-06-18,6.83,1.0248901903367538,7.17423133235725,27.02991452991452,True,1
+002679,福建金森,2021-07-01,17.62,bottom_area,2021-07-01,17.55,0.3988603988604005,6.495726495726499,30.522565320665084,False,1
+601015,陕西黑猫,2021-07-01,8.95,bottom_area,2021-06-29,8.61,3.9488966318234597,7.084785133565635,27.28040540540541,False,1

@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+605268,王力安防,2021-05-19,14.32,bottom_area,2021-05-19,14.3,0.13986013986013687,2.5174825174825135,27.88703983862833,False,1
+605077,华康股份,2021-05-19,53.2,bottom_area,2021-05-19,51.11,4.089219330855025,6.437096458618664,30.453122873860384,False,1
+300658,延江股份,2021-05-19,18.23,bottom_area,2021-05-10,17.44,4.529816513761463,9.346330275229352,31.28447596532702,True,1

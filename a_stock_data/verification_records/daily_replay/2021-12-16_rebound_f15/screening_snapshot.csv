@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+601689,拓普集团,2021-12-16,48.66,bottom_area,2021-12-16,48.48,0.37128712871287073,4.352310231023116,28.76873347046724,False,2
+000980,众泰汽车,2021-12-16,6.56,bottom_area,2021-12-16,6.37,2.9827315541601176,8.634222919937203,29.379157427937912,False,1
+605286,同力天启,2021-12-16,32.28,bottom_area,2021-12-13,30.88,4.533678756476691,7.124352331606215,31.056039294485377,False,1

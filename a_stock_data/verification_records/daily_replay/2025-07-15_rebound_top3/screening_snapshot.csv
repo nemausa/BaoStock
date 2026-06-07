@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+002826,易明医药,2025-07-15,17.78,bottom_area,2025-07-15,17.53,1.4261266400456358,3.3086138049058653,30.73883840379296,False,1
+603928,兴业股份,2025-07-15,15.78,bottom_area,2025-07-15,15.62,1.0243277848911663,3.008962868117802,29.92373261552266,False,1
+301108,洁雅股份,2025-07-15,23.35,bottom_area,2025-07-15,23.15,0.8639308855291701,4.103671706263511,32.32972814966384,False,1

@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+300602,飞荣达,2021-12-08,23.38,bottom_area,2021-12-08,22.94,1.918047079337392,4.4899738448125435,27.012408526885135,False,1
+688221,前沿生物,2021-12-08,16.91,bottom_area,2021-12-07,16.65,1.561561561561571,5.225225225225231,29.32937181663837,False,1
+600121,郑州煤电,2021-12-08,4.8,bottom_area,2021-11-29,4.61,4.121475054229924,6.073752711496732,27.287066246056774,False,2

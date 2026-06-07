@@ -1,0 +1,5 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+601901,方正证券,2022-03-25,6.63,confirmed_rebound,2022-03-09,6.4,3.593749999999993,10.156249999999991,29.51541850220264,True,1
+000815,美利云,2022-03-25,14.68,confirmed_rebound,2022-03-25,14.65,0.20477815699658264,10.511945392491473,30.502846299810237,False,1
+002222,福晶科技,2022-03-25,14.14,confirmed_rebound,2022-03-16,13.48,4.896142433234423,8.753709198813054,27.056277056277057,True,2
+603195,公牛集团,2022-03-25,128.15,confirmed_rebound,2022-03-16,122.88,4.288736979166676,11.73502604166668,28.971098265895957,True,1

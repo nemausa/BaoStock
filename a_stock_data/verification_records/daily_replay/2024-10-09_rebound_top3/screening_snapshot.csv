@@ -1,0 +1,2 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+300755,华致酒行,2024-10-09,17.64,bottom_area,2024-10-09,17.64,0.0,13.378684807256233,28.26352175681171,False,1

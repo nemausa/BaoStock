@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+688080,映翰通,2021-09-15,50.6,bottom_area,2021-09-15,49.81,1.5860269022284663,3.975105400521977,28.741058655221746,False,1
+300463,迈克生物,2021-09-15,27.36,bottom_area,2021-09-15,27.23,0.47741461623209325,2.607418288652225,31.924999999999997,False,1
+600211,西藏药业,2021-09-15,48.39,confirmed_rebound,2021-08-31,47.0,2.9574468085106393,9.829787234042547,28.7338893100834,True,1

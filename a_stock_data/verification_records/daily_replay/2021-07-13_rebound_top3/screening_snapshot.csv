@@ -1,0 +1,2 @@
+﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+688277,天智航,2021-07-13,25.6,bottom_area,2021-07-13,25.39,0.827097282394647,3.426545884206384,30.34293552812072,False,1
