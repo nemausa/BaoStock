@@ -662,7 +662,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--trend-threshold", type=float, default=0.07, help="趋势反转阈值，默认 0.07")
     parser.add_argument("--drawdown-min", type=float, default=0.27, help="回撤下限，默认 0.27")
     parser.add_argument("--drawdown-max", type=float, default=0.33, help="回撤上限，默认 0.33")
-    parser.add_argument("--bottom-area-max", "--start-rebound-min", dest="bottom_area_max", type=float, default=0.05, help="最新收盘距离当前低点不超过该比例时标记为底部附近，默认 0.05")
+    # parser.add_argument("--bottom-area-max", "--start-rebound-min", dest="bottom_area_max", type=float, default=0.05, help="最新收盘距离当前低点不超过该比例时标记为底部附近，默认 0.05")
     parser.add_argument("--current-rebound-max", type=float, default=0.07, help="最新收盘距离当前低点的最大涨幅，默认 0.07")
     parser.add_argument("--full-rebound-min", type=float, default=0.20, help="历史有效事件的低点后最高涨幅下限，默认 0.20")
     parser.add_argument("--min-events", type=int, default=1, help="至少出现的历史有效事件次数，默认 1")

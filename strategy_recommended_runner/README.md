@@ -8,7 +8,7 @@
 
 - `f20` 表示 `full_rebound_min = 0.20`
 - 每日脚本默认就是 `full_rebound_min = 0.20`
-- 每日脚本默认同时使用 `current_rebound_max = 0.05`
+- 每日实盘脚本暂不限制 `current_rebound_max`
 - 历史回放快照后缀使用 `rebound_top3`
 - 策略模式使用 `current`
 - 不使用 `stable-a` / `stable-b`
@@ -33,19 +33,25 @@ cd /home/nemausa/stock/BaoStock
 tomorrow_rebound_probability_ranking.xlsx
 ```
 
-在 `概率排行` sheet 中筛选：
+脚本会自动输出正式候选，并保存：
+
+```text
+strategy_recommended_runner/outputs/daily_filtered_top1.xlsx
+strategy_recommended_runner/outputs/daily_filtered_top1.csv
+```
+
+自动筛选规则：
 
 ```text
 latest_turn >= 8
 current_drawdown_pct <= 29
 ```
 
-筛选后按 `rank` 从小到大看：
+筛选后按 `rank` 从小到大：
 
-1. 最多只看前 `2` 个候选。
-2. 当前没有持仓时，第二天开盘优先买第 `1` 个候选。
-3. 如果第 `1` 个买不了一手，或者主动跳过，再看第 `2` 个候选。
-4. 当前已经持仓，就不买新的。
+1. 正式候选只买第 `1` 个。
+2. 当前已经持仓，就不买新的。
+3. `rank_score` 只作为排序分，不作为硬过滤条件。
 
 买入后按下面规则卖出：
 
@@ -119,7 +125,7 @@ strategy_recommended_runner/CURRENT_HIGH_RETURN_STRATEGY.md
 - 仓位管理：可用现金买满，必须按 `100` 股整数手买入
 - 手续费：暂不扣除
 - 买入方式：信号日后的下一个交易日开盘买入
-- 当前低点到最新收盘涨幅上限：`5%`
+- 当前低点到最新收盘涨幅：暂不限制
 - 同时持仓：最多 `1` 只
 - 每天最多买入：`1` 只
 - 同一股票卖出后冷却：`10` 个交易日
@@ -235,6 +241,19 @@ MIN_CLOSE_DRAWDOWN=27 MAX_CLOSE_DRAWDOWN=33 \
 
 ```bash
 /home/nemausa/venv/a-stock/bin/python strategy_recommended_runner/scripts/compare_f20_close_drawdown.py
+```
+
+高速对比“原始 top1 / rank_score 门槛 / 过滤后 top1”：
+
+```bash
+/home/nemausa/venv/a-stock/bin/python strategy_recommended_runner/scripts/fast_compare_selection_strategies.py
+```
+
+结果保存到：
+
+```text
+strategy_recommended_runner/outputs/fast_selection_strategy_compare.md
+strategy_recommended_runner/outputs/fast_selection_strategy_compare.xlsx
 ```
 
 回测 2026 年 1 月到 4 月：

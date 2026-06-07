@@ -73,10 +73,15 @@ def main() -> None:
 
     args.output_xlsx.parent.mkdir(parents=True, exist_ok=True)
     with pd.ExcelWriter(args.output_xlsx) as writer:
+        pd.DataFrame([
+            ("数据日期", args.date),
+            ("候选数量", len(df)),
+            ("生成时间", pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")),
+        ], columns=["项目", "说明"]).to_excel(writer, index=False, sheet_name="日期")
         display_df.to_excel(writer, index=False, sheet_name="候选排行")
         df.to_excel(writer, index=False, sheet_name="完整数据")
         pd.DataFrame([
-            ("日期", args.date),
+            ("数据日期", args.date),
             ("候选数", len(df)),
             ("策略", "rebound_top3"),
             ("current_rebound_max", "5%（距低点涨幅 ≤ 5%）"),
