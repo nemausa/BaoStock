@@ -39,7 +39,9 @@ SLEEP_MIN = 0.05
 SLEEP_MAX = 0.15
 
 MAX_RETRY = 3
-QUERY_TIMEOUT_SECONDS = 30
+QUERY_TIMEOUT_SECONDS = 60
+RECONNECT_INTERVAL = 500
+MAX_RECONNECT_RETRY = 5
 
 
 # ============================================================
@@ -243,6 +245,25 @@ def login_baostock() -> None:
 
 def logout_baostock() -> None:
     bs.logout()
+
+
+def reconnect_baostock(max_retry: int = MAX_RECONNECT_RETRY) -> None:
+    """登出后重新登录，遇到失败自动指数退避重试"""
+    for attempt in range(max_retry):
+        try:
+            bs.logout()
+        except Exception:
+            pass
+        time.sleep(2.0 + attempt * 2.0)
+        try:
+            lg = bs.login()
+            if lg.error_code == "0":
+                print(f"\n[重连成功] 第 {attempt + 1} 次尝试")
+                return
+            print(f"\n[重连失败] 第 {attempt + 1} 次: {lg.error_code} {lg.error_msg}")
+        except Exception as e:
+            print(f"\n[重连异常] 第 {attempt + 1} 次: {e}")
+    raise RuntimeError(f"baostock 重连失败，已尝试 {max_retry} 次")
 
 
 # ============================================================
@@ -562,7 +583,16 @@ def update_one_stock(
                 f"retry_{i + 1}_failed",
                 reason=f"{type(e).__name__}: {e}",
             )
-            time.sleep(1.0 * (i + 1))
+            print(f"\n[{code}] 第 {i + 1} 次失败: {e}，正在重连...")
+            try:
+                reconnect_baostock()
+            except RuntimeError as re:
+                append_request_log(
+                    code, bs_code, name, start_date, end_date,
+                    "failed", reason=f"reconnect failed: {re}",
+                )
+                raise
+            time.sleep(2.0 * (i + 1))
 
     if last_error is not None:
         append_request_log(
@@ -621,7 +651,11 @@ def main() -> None:
         empty_count = 0
         failed_count = 0
 
-        for _, row in tqdm(stock_list.iterrows(), total=len(stock_list)):
+        for idx, (_, row) in enumerate(tqdm(stock_list.iterrows(), total=len(stock_list))):
+            if idx > 0 and idx % RECONNECT_INTERVAL == 0:
+                print(f"\n[定期重连] 已处理 {idx} 只，主动刷新 session...")
+                reconnect_baostock()
+
             code = normalize_code(row["code"])
             bs_code = str(row["bs_code"])
             name = str(row["name"])
