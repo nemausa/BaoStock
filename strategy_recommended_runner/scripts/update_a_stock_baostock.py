@@ -35,12 +35,12 @@ REQUEST_LOG_FILE = LOG_DIR / "request_log.csv"
 # "3" = 不复权
 ADJUST_FLAG = "3"
 
-SLEEP_MIN = 0.05
-SLEEP_MAX = 0.15
+SLEEP_MIN = 0.3
+SLEEP_MAX = 0.8
 
 MAX_RETRY = 3
 QUERY_TIMEOUT_SECONDS = 60
-RECONNECT_INTERVAL = 500
+RECONNECT_INTERVAL = 200
 MAX_RECONNECT_RETRY = 5
 
 
@@ -178,9 +178,21 @@ def load_request_state() -> dict[str, str]:
 
 
 def save_request_state(request_state: dict[str, str], stock_info: dict[str, dict[str, str]]) -> None:
-    rows = []
+    # 先读磁盘现有数据，再合并——内存数据优先，防止覆盖其他股票的记录
+    existing: dict[str, str] = {}
+    if REQUEST_STATE_FILE.exists():
+        try:
+            ex_df = pd.read_csv(REQUEST_STATE_FILE, dtype=str)
+            if not ex_df.empty and "code" in ex_df.columns and "requested_until" in ex_df.columns:
+                ex_df["code"] = ex_df["code"].apply(normalize_code)
+                existing = dict(zip(ex_df["code"], ex_df["requested_until"]))
+        except Exception:
+            pass
 
-    for code, requested_until in sorted(request_state.items()):
+    merged = {**existing, **request_state}
+
+    rows = []
+    for code, requested_until in sorted(merged.items()):
         info = stock_info.get(code, {})
         rows.append({
             "code": code,
@@ -207,6 +219,7 @@ def advance_request_state(
     bs_code: str,
     name: str,
     requested_until: str,
+    save_to_disk: bool = True,
 ) -> None:
     code = normalize_code(code)
     old_date = request_state.get(code)
@@ -215,7 +228,8 @@ def advance_request_state(
         request_state[code] = requested_until
 
     stock_info[code] = {"bs_code": str(bs_code), "name": str(name)}
-    save_request_state(request_state, stock_info)
+    if save_to_disk:
+        save_request_state(request_state, stock_info)
 
 
 def baostock_result_to_df(rs) -> pd.DataFrame:
@@ -501,6 +515,25 @@ def write_stock_data(code: str, df: pd.DataFrame) -> None:
     out.to_parquet(path, index=False)
 
 
+def rebuild_request_state_from_parquet(request_state: dict[str, str]) -> int:
+    """扫描 parquet 目录，为 request_state 中缺失的股票补充最新日期，返回补充数量。"""
+    filled = 0
+    for parquet_file in sorted(PARQUET_DIR.glob("*.parquet")):
+        code = parquet_file.stem
+        if code in request_state:
+            continue
+        try:
+            df = pd.read_parquet(parquet_file, columns=["date"])
+            if df.empty:
+                continue
+            max_date = pd.to_datetime(df["date"]).max().strftime("%Y-%m-%d")
+            request_state[code] = max_date
+            filled += 1
+        except Exception:
+            pass
+    return filled
+
+
 def next_day_str(date_str: str) -> str:
     return (pd.to_datetime(date_str) + timedelta(days=1)).strftime("%Y-%m-%d")
 
@@ -553,13 +586,19 @@ def update_one_stock(
     request_state: dict[str, str],
     stock_info: dict[str, dict[str, str]],
 ) -> tuple[str, int]:
+    code_norm = normalize_code(code)
+    requested_until = request_state.get(code_norm)
+    # 快速跳过：request_state 已记录到 end_date，无需读 parquet
+    if requested_until and requested_until >= end_date:
+        return "skip", 0
+
     old_df = read_stock_data(code)
-    start_date = get_next_start_date(old_df, request_state.get(normalize_code(code)))
+    start_date = get_next_start_date(old_df, requested_until)
 
     if start_date > end_date:
         return "skip", 0
 
-    # 先记录请求进度。即使 Baostock 卡死后手动中断，下次也不会重复请求这一段。
+    # 先记录请求进度并立即落盘（合并写入，不会覆盖其他股票记录）。
     advance_request_state(request_state, stock_info, code, bs_code, name, end_date)
     append_request_log(code, bs_code, name, start_date, end_date, "started")
 
@@ -623,7 +662,7 @@ def main() -> None:
     end_date = today_date_str()
 
     print("开始更新 A 股日线数据 - Baostock")
-    print(f"起始日期: {START_DATE}")
+    print(f"历史兜底起始日期: {START_DATE}（每支股票按需增量更新，实际从上次记录的日期继续）")
     print(f"结束日期: {end_date}")
     print(f"主存储: {PARQUET_DIR.resolve()}")
     print(f"复权类型: {ADJUST_FLAG}，1=后复权，2=前复权，3=不复权")
@@ -637,6 +676,9 @@ def main() -> None:
         print(f"请求日志: {REQUEST_LOG_FILE.resolve()}")
 
         request_state = load_request_state()
+        filled = rebuild_request_state_from_parquet(request_state)
+        if filled > 0:
+            print(f"从 parquet 补充了 {filled} 只股票的进度记录（request_state 有缺失）")
         stock_info = {
             normalize_code(row["code"]): {
                 "bs_code": str(row["bs_code"]),
@@ -654,12 +696,14 @@ def main() -> None:
         for idx, (_, row) in enumerate(tqdm(stock_list.iterrows(), total=len(stock_list))):
             if idx > 0 and idx % RECONNECT_INTERVAL == 0:
                 print(f"\n[定期重连] 已处理 {idx} 只，主动刷新 session...")
+                save_request_state(request_state, stock_info)
                 reconnect_baostock()
 
             code = normalize_code(row["code"])
             bs_code = str(row["bs_code"])
             name = str(row["name"])
 
+            status = "failed"
             try:
                 status, rows = update_one_stock(
                     code,
@@ -682,8 +726,10 @@ def main() -> None:
                 failed_count += 1
                 append_failed(code, name, f"{type(e).__name__}: {e}")
 
-            time.sleep(random.uniform(SLEEP_MIN, SLEEP_MAX))
+            if status != "skip":
+                time.sleep(random.uniform(SLEEP_MIN, SLEEP_MAX))
 
+        save_request_state(request_state, stock_info)
         print()
         print("更新完成")
         print(f"更新股票数: {updated_count}")

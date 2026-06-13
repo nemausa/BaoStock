@@ -10,7 +10,7 @@ TODAY=$(date +%Y-%m-%d)
 cd "$REPO_ROOT"
 
 echo "=== 步骤 1/3: 更新今日行情 ==="
-"$PYTHON_BIN" strategy_recommended_runner/scripts/update_a_stock_baostock.py
+"$PYTHON_BIN" strategy_recommended_runner/scripts/update_a_stock_pytdx.py
 
 echo ""
 echo "=== 步骤 2/3: rebound_top3 参数回放今日 ($TODAY) ==="
