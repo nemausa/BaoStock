@@ -33,14 +33,14 @@ class StockData:
 
 
 def load_raw_price_frame(path: Path) -> pd.DataFrame:
-    columns = ["date", "high", "low", "close", "pct_chg", "pctChg", "turn"]
+    columns = ["date", "high", "low", "close", "pct_chg", "turn"]
     df = pd.read_parquet(path, columns=columns)
     if df.empty:
         return df
 
     df = df.copy()
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
-    for column in ["high", "low", "close", "pct_chg", "pctChg", "turn"]:
+    for column in ["high", "low", "close", "pct_chg", "turn"]:
         df[column] = pd.to_numeric(df[column], errors="coerce")
 
     df = df.dropna(subset=["date", "high", "low", "close"])
