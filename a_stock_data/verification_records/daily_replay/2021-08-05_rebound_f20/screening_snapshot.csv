@@ -1,4 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-300511,雪榕生物,2021-08-05,7.01,bottom_area,2021-08-03,6.82,2.785923753665682,7.478005865102635,29.54545454545454,False,1
-000037,深南电A,2021-08-05,7.52,bottom_area,2021-07-28,7.2,4.444444444444437,9.999999999999996,31.753554502369667,True,1
-600009,上海机场,2021-08-05,37.87,bottom_area,2021-08-02,36.6,3.469945355191246,5.983606557377043,30.747398297067168,False,1

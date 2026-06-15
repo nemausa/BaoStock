@@ -1,4 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-601155,新城控股,2022-10-19,15.66,bottom_area,2022-10-19,15.65,0.0638977635782734,5.814696485622993,31.50984682713348,False,2
-688025,杰普特,2022-10-19,47.91,bottom_area,2022-10-12,46.57,2.877388876959408,9.899076658793213,28.900763358778626,True,1
-000530,冰山冷热,2022-10-19,4.96,bottom_area,2022-10-11,4.75,4.421052631578946,10.105263157894747,28.030303030303028,True,1

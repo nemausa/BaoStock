@@ -598,8 +598,6 @@ def update_one_stock(
     if start_date > end_date:
         return "skip", 0
 
-    # 先记录请求进度并立即落盘（合并写入，不会覆盖其他股票记录）。
-    advance_request_state(request_state, stock_info, code, bs_code, name, end_date)
     append_request_log(code, bs_code, name, start_date, end_date, "started")
 
     new_df = pd.DataFrame()
@@ -651,7 +649,8 @@ def update_one_stock(
 
     merged = merge_stock_data(old_df, new_df)
     write_stock_data(code, merged)
-
+    # 只在成功写入 parquet 后才更新状态，防止中途停止导致数据缺失但状态已完成
+    advance_request_state(request_state, stock_info, code, bs_code, name, end_date)
     append_request_log(code, bs_code, name, start_date, end_date, "updated", rows=len(new_df))
     return "updated", len(new_df)
 

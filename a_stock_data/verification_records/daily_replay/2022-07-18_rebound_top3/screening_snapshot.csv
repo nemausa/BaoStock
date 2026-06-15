@@ -1,4 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-002482,广田集团,2022-07-18,1.9,bottom_area,2022-07-15,1.81,4.972375690607727,4.972375690607727,30.384615384615387,False,1
-300672,国科微,2022-07-18,70.8,bottom_area,2022-07-18,67.66,4.640851315400534,4.759089565474429,27.78311452663038,False,2
-002589,瑞康医药,2022-07-18,4.57,bottom_area,2022-07-18,4.5,1.555555555555562,3.333333333333341,28.22966507177033,False,1

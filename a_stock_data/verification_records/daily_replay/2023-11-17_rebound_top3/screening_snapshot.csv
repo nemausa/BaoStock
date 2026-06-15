@@ -1,4 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-600048,保利发展,2023-11-17,10.84,bottom_area,2023-10-30,10.7,1.3084112149532765,5.981308411214959,28.139691067830768,False,2
-600325,华发股份,2023-11-17,7.91,bottom_area,2023-11-16,7.77,1.8018018018018092,3.8610038610038706,29.746835443037984,False,1
-603326,我乐家居,2023-11-17,10.37,bottom_area,2023-11-02,9.88,4.959514170040469,6.983805668016188,30.909090909090907,False,1

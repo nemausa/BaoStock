@@ -1,4 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-002474,榕基软件,2022-11-30,8.95,bottom_area,2022-11-28,8.6,4.069767441860462,5.116279069767436,28.33333333333334,False,1
-300769,德方纳米,2022-11-30,226.19,bottom_area,2022-11-28,221.67,2.0390670816980245,4.434519781657425,31.346010901883055,False,1
-000681,视觉中国,2022-11-30,12.08,bottom_area,2022-11-28,11.66,3.602058319039451,5.4030874785591685,28.641370869033047,False,1

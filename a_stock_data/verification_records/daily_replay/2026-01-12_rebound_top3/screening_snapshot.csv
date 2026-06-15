@@ -1,4 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_top_price,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,close_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-301687,新广益,2026-01-12,64.71,bottom_area,88.3,2026-01-12,62.6,3.3706070287539815,6.1341853035143705,29.10532276330691,26.71574178935448,False,1
-601566,九牧王,2026-01-12,13.48,bottom_area,18.68,2026-01-06,13.01,3.6126056879323647,6.302843966179863,30.35331905781585,27.8372591006424,False,2
-600104,上汽集团,2026-01-12,15.42,bottom_area,20.63,2025-11-21,14.7,4.897959183673474,8.299319727891161,28.74454677653902,25.254483761512358,True,1

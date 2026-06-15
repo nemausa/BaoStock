@@ -1,5 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-605033,美邦股份,2025-07-31,21.26,bottom_area,2025-07-31,21.25,0.04705882352941912,2.494117647058829,31.672025723472675,False,1
-000607,华媒控股,2025-07-31,4.68,bottom_area,2025-07-31,4.66,0.429184549356214,2.145922746781108,29.924812030075188,False,1
-603928,兴业股份,2025-07-31,15.21,bottom_area,2025-07-31,15.15,0.39603960396039933,2.310231023102308,32.03230148048452,False,1
-300879,大叶股份,2025-07-31,32.0,bottom_area,2025-07-31,31.85,0.4709576138147522,2.951334379905801,31.0158111327702,False,1

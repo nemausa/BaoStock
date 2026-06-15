@@ -514,9 +514,10 @@ def update_one_stock(
     code = normalize_code(code)
     requested_until = request_state.get(code)
 
-    # 快速跳过：已更新到 end_date
+    # 快速跳过：已更新到 end_date，且 parquet 文件确实存在
     if requested_until and requested_until >= end_date:
-        return "skip", 0
+        if code_to_parquet_path(code).exists():
+            return "skip", 0
 
     old_df = read_stock_data(code)
 
@@ -532,8 +533,6 @@ def update_one_stock(
     if start_date > end_date:
         return "skip", 0
 
-    # 标记已开始请求（落盘，防止 kill 后重复拉取）
-    advance_request_state(request_state, stock_info, code, name, end_date)
     append_request_log(code, name, start_date, end_date, "started")
 
     # 获取数据
@@ -563,6 +562,8 @@ def update_one_stock(
     merged = merge_stock_data(old_df, new_df)
     merged = compute_pct_chg(merged)
     write_stock_data(code, merged)
+    # 只在成功写入 parquet 后才更新状态，防止中途停止导致数据缺失但状态已完成
+    advance_request_state(request_state, stock_info, code, name, end_date)
     append_request_log(code, name, start_date, end_date, "updated", rows=len(new_df))
     return "updated", len(new_df)
 

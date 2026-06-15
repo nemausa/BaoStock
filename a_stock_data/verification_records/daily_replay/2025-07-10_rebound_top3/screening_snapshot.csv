@@ -1,4 +1,0 @@
-﻿code,name,latest_date,latest_close,current_stage,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
-002826,易明医药,2025-07-10,17.97,bottom_area,2025-07-10,17.93,0.22308979364193612,2.844394868934755,29.158435401027262,False,1
-301108,洁雅股份,2025-07-10,24.32,bottom_area,2025-07-10,23.74,2.443133951137329,2.9486099410278133,30.605086232095886,False,1
-603928,兴业股份,2025-07-10,16.25,bottom_area,2025-07-10,16.12,0.8064516129032195,2.109181141439205,27.68057424854194,False,1
