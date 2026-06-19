@@ -1,0 +1,2 @@
+﻿code,name,latest_date,latest_close,current_stage,current_top_price,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,close_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+600579,中化装备,2024-03-04,7.51,bottom_area,10.2,2024-03-04,7.23,3.872752420470254,6.224066390041483,29.117647058823522,26.37254901960784,False,4

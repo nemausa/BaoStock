@@ -338,6 +338,7 @@ def score_row(
         "current_stage": stage,
         "latest_date": row["latest_date"],
         "latest_close": row["latest_close"],
+        "current_top_date": str(row.get("current_top_date", "")),
         "current_top_price": current_top_price,
         "current_low_date": row["current_low_date"],
         "current_low_price": row["current_low_price"],
@@ -354,6 +355,9 @@ def score_row(
         "history_success_rate_pct": success_rate * 100,
         "history_avg_rebound_pct": avg_rebound * 100,
         "history_max_rebound_pct": max_rebound * 100,
+        "history_success_dates": "; ".join(
+            event.low_date.strftime("%Y-%m-%d") for event in previous_success
+        ),
         "upside_to_20pct_target_pct": upside_to_20 * 100,
         "risk_back_to_low_pct": risk_to_low * 100,
         "reason": (
@@ -415,6 +419,11 @@ def replay_day(stocks: list[StockData], replay_date: pd.Timestamp, args: argpars
         ["rank_score", "probability_score"],
         ascending=False,
     ).reset_index(drop=True)
+
+    max_neg = getattr(args, "max_neg_pct_chg", -20.0)
+    if "latest_pct_chg" in ranking.columns:
+        ranking = ranking[ranking["latest_pct_chg"] >= max_neg].reset_index(drop=True)
+
     ranking.insert(0, "rank", range(1, len(ranking) + 1))
     return ranking
 
@@ -605,6 +614,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-events", type=int, default=1, help="至少出现的历史有效事件次数，默认 1")
     parser.add_argument("--output", type=Path, default=OUT_FILE, help=f"输出 Excel，默认 {OUT_FILE}")
     parser.add_argument("--include-st", action="store_true", help="包含名称中带 ST 的股票；默认排除")
+    parser.add_argument("--max-neg-pct-chg", type=float, default=-20.0,
+                        help="当日涨跌幅下限，低于此值视为除权日排除，默认 -20.0%%")
     parser.add_argument("--progress", action="store_true", help="打印加载和回放进度")
     parser.add_argument("--verbose-errors", action="store_true", help="打印单只股票回放错误")
     return parser.parse_args()

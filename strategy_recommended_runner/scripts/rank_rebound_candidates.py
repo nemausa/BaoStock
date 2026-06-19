@@ -150,6 +150,7 @@ def score_candidates(args: argparse.Namespace) -> pd.DataFrame:
             "current_stage": stage,
             "latest_date": row["latest_date"],
             "latest_close": row["latest_close"],
+            "current_top_date": str(row.get("current_top_date", "")),
             "current_top_price": current_top_price,
             "current_low_date": row["current_low_date"],
             "current_low_price": row["current_low_price"],
@@ -166,6 +167,9 @@ def score_candidates(args: argparse.Namespace) -> pd.DataFrame:
             "history_success_rate_pct": success_rate * 100,
             "history_avg_rebound_pct": avg_rebound * 100,
             "history_max_rebound_pct": max_rebound * 100,
+            "history_success_dates": "; ".join(
+                event.low_date.strftime("%Y-%m-%d") for event in previous_success
+            ),
             "upside_to_20pct_target_pct": upside_to_20 * 100,
             "risk_back_to_low_pct": risk_to_low * 100,
             "reason": (

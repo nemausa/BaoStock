@@ -1,0 +1,25 @@
+已加载 500/5207，有效 470 只
+已加载 1500/5207，有效 1403 只
+已加载 2000/5207，有效 1859 只
+已加载 2500/5207，有效 2354 只
+已加载 3000/5207，有效 2845 只
+已加载 3500/5207，有效 3313 只
+已加载 4000/5207，有效 3805 只
+已加载 4500/5207，有效 4279 只
+已加载 5000/5207，有效 4768 只
+开始回放 14 个交易日，worker=6，生成每日 Excel，股票数据已加载在内存中
+已保存 1/14 2026-06-03: 候选 202 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-03_rebound_top3
+已保存 2/14 2026-06-02: 候选 212 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-02_rebound_top3
+已保存 3/14 2026-06-04: 候选 234 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-04_rebound_top3
+已保存 4/14 2026-06-05: 候选 221 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-05_rebound_top3
+已保存 5/14 2026-06-08: 候选 336 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-08_rebound_top3
+已保存 6/14 2026-06-01: 候选 159 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-01_rebound_top3
+已保存 7/14 2026-06-10: 候选 373 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-10_rebound_top3
+跳过 8/14 2026-06-17: 快照已存在
+跳过 9/14 2026-06-18: 快照已存在
+已保存 10/14 2026-06-09: 候选 319 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-09_rebound_top3
+已保存 11/14 2026-06-12: 候选 327 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-12_rebound_top3
+已保存 12/14 2026-06-11: 候选 405 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-11_rebound_top3
+已保存 13/14 2026-06-15: 候选 218 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-15_rebound_top3
+已保存 14/14 2026-06-16: 候选 189 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026/06/2026-06-16_rebound_top3
+已保存每日回放快照 12 个

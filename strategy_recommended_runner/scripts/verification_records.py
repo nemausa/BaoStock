@@ -143,7 +143,8 @@ def snapshot_dirs(record_dir: Path) -> list[Path]:
 
 
 def daily_replay_snapshot_dir(record_dir: Path, record_date: str, suffix: str | None) -> Path:
-    return record_dir / "daily_replay" / snapshot_name(record_date, suffix)
+    # 按 年/月 分目录存放，避免所有快照堆在同一级，例如 daily_replay/2026/06/2026-06-18_rebound_top3
+    return record_dir / "daily_replay" / record_date[:4] / record_date[5:7] / snapshot_name(record_date, suffix)
 
 
 def save_replay_snapshot(
@@ -571,9 +572,10 @@ def daily_replay_snapshot_dirs(daily_dir: Path, suffix: str | None = None) -> li
     if not daily_dir.exists():
         return []
     expected_suffix = f"_{suffix}" if suffix else None
+    # 递归查找，兼容旧的扁平结构和新的 年/月 分目录结构
     return sorted(
         path
-        for path in daily_dir.iterdir()
+        for path in daily_dir.rglob("*")
         if path.is_dir() and (path / "ranking_snapshot.csv").exists()
         and (expected_suffix is None or path.name.endswith(expected_suffix))
     )
@@ -2504,6 +2506,8 @@ def parse_args() -> argparse.Namespace:
     backfill_parser.add_argument("--workers", type=int, default=None, help="并发回放进程数；默认 CPU 核心数减 1")
     backfill_parser.add_argument("--no-excel-snapshot", action="store_true", help="只保存 CSV 和 manifest，跳过每日 snapshot.xlsx")
     backfill_parser.add_argument("--skip-existing", action="store_true", help="已有 ranking_snapshot.csv 的日期直接跳过")
+    backfill_parser.add_argument("--max-neg-pct-chg", type=float, default=-20.0,
+                                  help="当日涨跌幅下限，低于此值视为除权日排除，默认 -20.0%%")
     backfill_parser.add_argument("--progress", action="store_true", help="打印加载和回放进度")
     backfill_parser.add_argument("--verbose-errors", action="store_true", help="打印单只股票回放错误")
 

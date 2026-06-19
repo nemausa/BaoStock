@@ -1,0 +1,2 @@
+﻿code,name,latest_date,latest_close,current_stage,current_top_price,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,close_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+600639,浦东金桥,2024-02-08,11.32,bottom_area,15.14,2024-02-08,10.8,4.81481481481481,7.129629629629624,28.66578599735799,25.23117569352708,False,5

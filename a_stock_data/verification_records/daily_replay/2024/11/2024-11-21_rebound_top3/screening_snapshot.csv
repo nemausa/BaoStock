@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_top_price,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,close_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+002388,新亚制程,2024-11-21,4.33,bottom_area,5.96,2024-11-21,4.29,0.9324009324009332,4.195804195804189,28.02013422818792,27.348993288590602,False,7
+688793,倍轻松,2024-11-21,24.52,bottom_area,32.45,2024-11-18,23.58,3.9864291772688776,6.106870229007639,27.33436055469955,24.43759630200309,False,11
+002269,美邦服饰,2024-11-21,1.75,bottom_area,2.29,2024-11-19,1.67,4.790419161676651,7.7844311377245585,27.074235807860266,23.580786026200876,True,6

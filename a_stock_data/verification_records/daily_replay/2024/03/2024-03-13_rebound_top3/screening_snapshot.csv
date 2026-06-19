@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_top_price,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,close_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+002952,亚世光电,2024-03-13,30.17,bottom_area,41.54,2024-03-11,28.8,4.756944444444447,7.569444444444444,30.669234472797303,27.371208473760227,True,4
+002209,达意隆,2024-03-13,9.06,bottom_area,12.38,2024-03-11,8.89,1.912260967379077,4.161979752530924,28.190630048465266,26.81744749596123,False,3
+603798,康普顿,2024-03-13,9.17,bottom_area,12.17,2024-03-11,8.83,3.850509626274064,6.568516421291054,27.44453574363188,24.65078060805259,False,1

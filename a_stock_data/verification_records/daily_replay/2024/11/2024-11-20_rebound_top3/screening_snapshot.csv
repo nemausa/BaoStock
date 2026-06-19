@@ -1,0 +1,4 @@
+﻿code,name,latest_date,latest_close,current_stage,current_top_price,current_low_date,current_low_price,current_low_to_latest_pct,current_low_to_high_pct,current_drawdown_pct,close_drawdown_pct,current_is_bottom_confirmed,historical_valid_event_count
+688793,倍轻松,2024-11-20,24.74,bottom_area,32.45,2024-11-18,23.58,4.919423240033928,6.064461407972872,27.33436055469955,23.759630200308177,False,11
+300622,博士眼镜,2024-11-20,43.16,bottom_area,58.76,2024-11-19,41.28,4.554263565891461,12.6453488372093,29.74812797821647,26.548672566371685,True,2
+600550,保变电气,2024-11-20,9.28,bottom_area,13.09,2024-11-18,8.93,3.9193729003359428,4.3673012318029185,31.779984721161192,29.106187929717347,False,4

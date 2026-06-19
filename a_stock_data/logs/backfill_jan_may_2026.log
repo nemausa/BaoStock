@@ -1,0 +1,106 @@
+已加载 500/5207，有效 470 只
+已加载 1500/5207，有效 1403 只
+已加载 2000/5207，有效 1859 只
+已加载 2500/5207，有效 2354 只
+已加载 3000/5207，有效 2845 只
+已加载 3500/5207，有效 3313 只
+已加载 4000/5207，有效 3805 只
+已加载 4500/5207，有效 4279 只
+已加载 5000/5207，有效 4768 只
+开始回放 95 个交易日，worker=6，生成每日 Excel，股票数据已加载在内存中
+已保存 1/95 2026-01-09: 候选 9 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-09_rebound_top3
+已保存 2/95 2026-01-06: 候选 22 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-06_rebound_top3
+已保存 3/95 2026-01-07: 候选 24 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-07_rebound_top3
+已保存 4/95 2026-01-05: 候选 27 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-05_rebound_top3
+已保存 5/95 2026-01-08: 候选 13 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-08_rebound_top3
+已保存 6/95 2026-01-12: 候选 4 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-12_rebound_top3
+已保存 7/95 2026-01-14: 候选 13 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-14_rebound_top3
+已保存 8/95 2026-01-15: 候选 19 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-15_rebound_top3
+已保存 9/95 2026-01-16: 候选 29 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-16_rebound_top3
+已保存 10/95 2026-01-20: 候选 50 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-20_rebound_top3
+已保存 11/95 2026-01-13: 候选 11 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-13_rebound_top3
+已保存 12/95 2026-01-19: 候选 32 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-19_rebound_top3
+已保存 13/95 2026-01-21: 候选 55 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-21_rebound_top3
+已保存 14/95 2026-01-22: 候选 41 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-22_rebound_top3
+已保存 15/95 2026-01-26: 候选 23 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-26_rebound_top3
+已保存 16/95 2026-01-27: 候选 24 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-27_rebound_top3
+已保存 17/95 2026-01-23: 候选 9 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-23_rebound_top3
+已保存 18/95 2026-01-28: 候选 24 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-28_rebound_top3
+已保存 19/95 2026-01-29: 候选 25 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-29_rebound_top3
+已保存 20/95 2026-01-30: 候选 31 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-01-30_rebound_top3
+已保存 21/95 2026-02-02: 候选 37 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-02_rebound_top3
+已保存 22/95 2026-02-04: 候选 28 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-04_rebound_top3
+已保存 23/95 2026-02-03: 候选 30 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-03_rebound_top3
+已保存 24/95 2026-02-05: 候选 29 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-05_rebound_top3
+已保存 25/95 2026-02-06: 候选 34 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-06_rebound_top3
+已保存 26/95 2026-02-10: 候选 23 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-10_rebound_top3
+已保存 27/95 2026-02-09: 候选 20 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-09_rebound_top3
+已保存 28/95 2026-02-11: 候选 31 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-11_rebound_top3
+已保存 29/95 2026-02-12: 候选 29 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-12_rebound_top3
+已保存 30/95 2026-02-13: 候选 28 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-13_rebound_top3
+已保存 31/95 2026-02-24: 候选 27 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-24_rebound_top3
+已保存 32/95 2026-02-25: 候选 26 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-25_rebound_top3
+已保存 33/95 2026-03-02: 候选 36 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-02_rebound_top3
+已保存 34/95 2026-02-26: 候选 30 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-26_rebound_top3
+已保存 35/95 2026-02-27: 候选 27 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-02-27_rebound_top3
+已保存 36/95 2026-03-03: 候选 57 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-03_rebound_top3
+已保存 37/95 2026-03-04: 候选 72 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-04_rebound_top3
+已保存 38/95 2026-03-05: 候选 65 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-05_rebound_top3
+已保存 39/95 2026-03-09: 候选 62 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-09_rebound_top3
+已保存 40/95 2026-03-11: 候选 43 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-11_rebound_top3
+已保存 41/95 2026-03-06: 候选 60 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-06_rebound_top3
+已保存 42/95 2026-03-10: 候选 36 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-10_rebound_top3
+已保存 43/95 2026-03-12: 候选 60 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-12_rebound_top3
+已保存 44/95 2026-03-13: 候选 61 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-13_rebound_top3
+已保存 45/95 2026-03-16: 候选 54 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-16_rebound_top3
+已保存 46/95 2026-03-17: 候选 52 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-17_rebound_top3
+已保存 47/95 2026-03-19: 候选 66 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-19_rebound_top3
+已保存 48/95 2026-03-18: 候选 52 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-18_rebound_top3
+已保存 49/95 2026-03-20: 候选 114 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-20_rebound_top3
+已保存 50/95 2026-03-23: 候选 323 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-23_rebound_top3
+已保存 51/95 2026-03-25: 候选 80 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-25_rebound_top3
+已保存 52/95 2026-03-24: 候选 208 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-24_rebound_top3
+已保存 53/95 2026-03-26: 候选 187 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-26_rebound_top3
+已保存 54/95 2026-03-27: 候选 103 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-27_rebound_top3
+已保存 55/95 2026-03-30: 候选 94 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-30_rebound_top3
+已保存 56/95 2026-03-31: 候选 122 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-03-31_rebound_top3
+已保存 57/95 2026-04-01: 候选 79 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-01_rebound_top3
+已保存 58/95 2026-04-02: 候选 136 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-02_rebound_top3
+已保存 59/95 2026-04-07: 候选 134 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-07_rebound_top3
+已保存 60/95 2026-04-03: 候选 170 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-03_rebound_top3
+已保存 61/95 2026-04-08: 候选 32 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-08_rebound_top3
+已保存 62/95 2026-04-10: 候选 58 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-10_rebound_top3
+已保存 63/95 2026-04-09: 候选 93 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-09_rebound_top3
+已保存 64/95 2026-04-13: 候选 53 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-13_rebound_top3
+已保存 65/95 2026-04-14: 候选 45 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-14_rebound_top3
+已保存 66/95 2026-04-15: 候选 58 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-15_rebound_top3
+已保存 67/95 2026-04-16: 候选 33 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-16_rebound_top3
+已保存 68/95 2026-04-21: 候选 40 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-21_rebound_top3
+已保存 69/95 2026-04-17: 候选 38 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-17_rebound_top3
+已保存 70/95 2026-04-20: 候选 34 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-20_rebound_top3
+已保存 71/95 2026-04-22: 候选 43 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-22_rebound_top3
+已保存 72/95 2026-04-23: 候选 50 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-23_rebound_top3
+已保存 73/95 2026-04-24: 候选 42 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-24_rebound_top3
+已保存 74/95 2026-04-27: 候选 34 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-27_rebound_top3
+已保存 75/95 2026-04-28: 候选 33 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-28_rebound_top3
+已保存 76/95 2026-04-29: 候选 34 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-29_rebound_top3
+已保存 77/95 2026-04-30: 候选 32 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-04-30_rebound_top3
+已保存 78/95 2026-05-06: 候选 28 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-06_rebound_top3
+已保存 79/95 2026-05-07: 候选 25 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-07_rebound_top3
+已保存 80/95 2026-05-08: 候选 15 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-08_rebound_top3
+已保存 81/95 2026-05-11: 候选 17 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-11_rebound_top3
+已保存 82/95 2026-05-13: 候选 24 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-13_rebound_top3
+已保存 83/95 2026-05-12: 候选 25 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-12_rebound_top3
+已保存 84/95 2026-05-14: 候选 37 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-14_rebound_top3
+已保存 85/95 2026-05-15: 候选 41 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-15_rebound_top3
+已保存 86/95 2026-05-18: 候选 44 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-18_rebound_top3
+已保存 87/95 2026-05-19: 候选 53 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-19_rebound_top3
+已保存 88/95 2026-05-20: 候选 63 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-20_rebound_top3
+已保存 89/95 2026-05-21: 候选 65 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-21_rebound_top3
+已保存 90/95 2026-05-22: 候选 61 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-22_rebound_top3
+已保存 91/95 2026-05-26: 候选 101 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-26_rebound_top3
+已保存 92/95 2026-05-27: 候选 137 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-27_rebound_top3
+已保存 93/95 2026-05-25: 候选 78 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-25_rebound_top3
+已保存 94/95 2026-05-28: 候选 150 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-28_rebound_top3
+已保存 95/95 2026-05-29: 候选 178 只，Top3 可验证 -> a_stock_data/verification_records/daily_replay/2026-05-29_rebound_top3
+已保存每日回放快照 95 个
