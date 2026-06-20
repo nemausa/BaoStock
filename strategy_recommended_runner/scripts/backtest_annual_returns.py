@@ -128,12 +128,13 @@ class PriceCache:
             if not path.exists():
                 self._cache[code] = pd.DataFrame()
                 return self._cache[code]
-            df = pd.read_parquet(path, columns=["date", "open", "high", "low", "close", "preclose"])
+            df = pd.read_parquet(path, columns=["date", "open", "high", "low", "close"])
             df = df.copy()
             df["date"] = pd.to_datetime(df["date"], errors="coerce")
-            for col in ["open", "high", "low", "close", "preclose"]:
+            for col in ["open", "high", "low", "close"]:
                 df[col] = pd.to_numeric(df[col], errors="coerce")
             df = df.dropna(subset=["date", "open", "high", "low", "close"]).sort_values("date").reset_index(drop=True)
+            df["preclose"] = df["close"].shift(1)
             df["date_str"] = df["date"].dt.strftime("%Y-%m-%d")
             self._cache[code] = df
         return self._cache[code]
@@ -205,7 +206,7 @@ def exit_trade(
 
 def load_daily_rankings(daily_dir: Path, start_date: str, end_date: str) -> pd.DataFrame:
     frames: list[pd.DataFrame] = []
-    for path in sorted(daily_dir.glob("*_rebound_top3/ranking_snapshot.csv")):
+    for path in sorted(daily_dir.rglob("*_rebound_top3/ranking_snapshot.csv")):
         signal_date = path.parent.name[:10]
         if signal_date < start_date or signal_date > end_date:
             continue

@@ -173,7 +173,7 @@ def exit_trade(
 
 def load_daily_rankings(daily_dir: Path, start_date: str, end_date: str) -> pd.DataFrame:
     frames: list[pd.DataFrame] = []
-    for path in sorted(daily_dir.glob("*_rebound_top3/ranking_snapshot.csv")):
+    for path in sorted(daily_dir.rglob("*_rebound_top3/ranking_snapshot.csv")):
         signal_date = path.parent.name[:10]
         if signal_date < start_date or signal_date > end_date:
             continue

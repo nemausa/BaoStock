@@ -63,7 +63,8 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    snapshot_dir = args.daily_dir / f"{args.date}_rebound_top3"
+    year, month = args.date[:4], args.date[5:7]
+    snapshot_dir = args.daily_dir / year / month / f"{args.date}_rebound_top3"
     ranking_csv = snapshot_dir / "ranking_snapshot.csv"
 
     if not ranking_csv.exists():

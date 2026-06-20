@@ -143,7 +143,8 @@ def snapshot_dirs(record_dir: Path) -> list[Path]:
 
 
 def daily_replay_snapshot_dir(record_dir: Path, record_date: str, suffix: str | None) -> Path:
-    return record_dir / "daily_replay" / snapshot_name(record_date, suffix)
+    year, month = record_date[:4], record_date[5:7]
+    return record_dir / "daily_replay" / year / month / snapshot_name(record_date, suffix)
 
 
 def save_replay_snapshot(
@@ -572,10 +573,9 @@ def daily_replay_snapshot_dirs(daily_dir: Path, suffix: str | None = None) -> li
         return []
     expected_suffix = f"_{suffix}" if suffix else None
     return sorted(
-        path
-        for path in daily_dir.iterdir()
-        if path.is_dir() and (path / "ranking_snapshot.csv").exists()
-        and (expected_suffix is None or path.name.endswith(expected_suffix))
+        (p.parent for p in daily_dir.rglob("ranking_snapshot.csv")
+         if expected_suffix is None or p.parent.name.endswith(expected_suffix)),
+        key=lambda p: p.name,
     )
 
 
@@ -950,6 +950,8 @@ def portfolio_selection_description(args: argparse.Namespace) -> str:
         parts.append(f"close_drawdown_pct >= {args.min_close_drawdown:g}")
     if getattr(args, "max_close_drawdown", None) is not None:
         parts.append(f"close_drawdown_pct <= {args.max_close_drawdown:g}")
+    if getattr(args, "min_next_open_to_signal_close_pct", None) is not None:
+        parts.append(f"next_open_to_signal_close_pct >= {args.min_next_open_to_signal_close_pct:g}")
     if getattr(args, "max_next_open_to_signal_close_pct", None) is not None:
         parts.append(f"next_open_to_signal_close_pct <= {args.max_next_open_to_signal_close_pct:g}")
     if getattr(args, "max_next_open_to_current_low_pct", None) is not None:
@@ -992,6 +994,12 @@ def select_portfolio_candidates(daily_rankings: pd.DataFrame, args: argparse.Nam
     if getattr(args, "max_rank", None) is not None:
         mask &= numeric_series(selected, "rank") <= args.max_rank
     candidates = selected[mask].copy().sort_values(["signal_date", "rank"])
+
+    min_daily = getattr(args, "min_daily_candidates", None)
+    if min_daily is not None and not candidates.empty:
+        daily_counts = candidates.groupby("signal_date").size()
+        valid_signal_dates = daily_counts[daily_counts >= min_daily].index
+        candidates = candidates[candidates["signal_date"].isin(valid_signal_dates)]
 
     if args.max_daily_candidates > 0:
         candidates = candidates.groupby("signal_date", group_keys=False).head(args.max_daily_candidates)
@@ -1078,6 +1086,23 @@ def build_portfolio_orders(
                     "next_open_to_signal_close_pct": next_open_to_signal_close_pct,
                     "next_open_to_current_low_pct": next_open_to_current_low_pct,
                     "skip_reason": f"次日开盘相对信号收盘涨幅 {next_open_to_signal_close_pct:.2f}% > {float(max_to_signal_close):g}%",
+                })
+                continue
+
+        min_to_signal_close = getattr(args, "min_next_open_to_signal_close_pct", None)
+        if min_to_signal_close is not None:
+            if next_open_to_signal_close_pct is None:
+                skipped.append({**row.to_dict(), "code": code, "skip_reason": "次日开盘相对信号收盘过滤基准缺失"})
+                continue
+            if next_open_to_signal_close_pct < float(min_to_signal_close):
+                skipped.append({
+                    **row.to_dict(),
+                    "code": code,
+                    "entry_date": pd.Timestamp(entry_row["date"]).strftime("%Y-%m-%d"),
+                    "entry_open": entry_open,
+                    "next_open_to_signal_close_pct": next_open_to_signal_close_pct,
+                    "next_open_to_current_low_pct": next_open_to_current_low_pct,
+                    "skip_reason": f"次日开盘相对信号收盘跌幅 {next_open_to_signal_close_pct:.2f}% < {float(min_to_signal_close):g}%",
                 })
                 continue
 
@@ -2541,9 +2566,11 @@ def parse_args() -> argparse.Namespace:
     portfolio_parser.add_argument("--max-low-to-latest-pct", type=float, default=None, help="当前低点到最新收盘涨幅上限百分比")
     portfolio_parser.add_argument("--min-close-drawdown", type=float, default=None, help="按最新收盘价计算的当前回撤下限百分比")
     portfolio_parser.add_argument("--max-close-drawdown", type=float, default=None, help="按最新收盘价计算的当前回撤上限百分比")
+    portfolio_parser.add_argument("--min-next-open-to-signal-close-pct", type=float, default=None, help="次日开盘价相对信号日收盘价跌幅下限百分比，例如 -2 表示低开超过 2%% 不买")
     portfolio_parser.add_argument("--max-next-open-to-signal-close-pct", type=float, default=None, help="次日开盘价相对信号日收盘价涨幅上限百分比，例如 2 表示高开超过 2%% 不买")
     portfolio_parser.add_argument("--max-next-open-to-current-low-pct", type=float, default=None, help="次日开盘价相对当前低点涨幅上限百分比，例如 5 表示开盘已离低点超过 5%% 不买")
     portfolio_parser.add_argument("--max-rank", type=float, default=None, help="最大排行名次，例如 10")
+    portfolio_parser.add_argument("--min-daily-candidates", type=int, default=None, help="每天通过过滤的候选数下限，例如 2 表示市场共振才交易")
     portfolio_parser.add_argument("--max-daily-candidates", type=int, default=2, help="每天最多候选数，默认 2")
     portfolio_parser.add_argument("--max-positions", type=int, default=2, help="最多同时持仓数，默认 2")
     portfolio_parser.add_argument("--max-daily-buys", type=int, default=2, help="每天最多新买入数量，默认 2")

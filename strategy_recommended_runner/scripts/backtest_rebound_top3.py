@@ -33,14 +33,14 @@ class StockData:
 
 
 def load_raw_price_frame(path: Path) -> pd.DataFrame:
-    columns = ["date", "high", "low", "close", "pct_chg", "pctChg", "turn"]
+    columns = ["date", "high", "low", "close", "pct_chg", "turn"]
     df = pd.read_parquet(path, columns=columns)
     if df.empty:
         return df
 
     df = df.copy()
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
-    for column in ["high", "low", "close", "pct_chg", "pctChg", "turn"]:
+    for column in ["high", "low", "close", "pct_chg", "turn"]:
         df[column] = pd.to_numeric(df[column], errors="coerce")
 
     df = df.dropna(subset=["date", "high", "low", "close"])
@@ -274,7 +274,7 @@ def score_row(
     avg_rebound = sum(event.rebound_pct for event in previous_success) / success_count if success_count else 0.0
     max_rebound = max((event.rebound_pct for event in previous_success), default=0.0)
 
-    latest_pct_chg = safe_float(latest.get("pct_chg", latest.get("pctChg", 0)))
+    latest_pct_chg = safe_float(latest.get("pct_chg", 0))
     latest_turn = safe_float(latest.get("turn", 0))
 
     current_low_to_latest = safe_float(row["current_low_to_latest_pct"]) / 100

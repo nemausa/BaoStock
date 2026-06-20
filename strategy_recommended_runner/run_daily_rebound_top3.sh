@@ -7,6 +7,15 @@ PYTHON_BIN="${PYTHON_BIN:-/home/nemausa/venv/a-stock/bin/python}"
 
 TODAY=$(date +%Y-%m-%d)
 
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --date)
+      TODAY="$2"; shift 2 ;;
+    *)
+      echo "未知参数: $1" >&2; exit 1 ;;
+  esac
+done
+
 cd "$REPO_ROOT"
 
 echo "=== 步骤 1/3: 更新今日行情 ==="
