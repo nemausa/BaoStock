@@ -15,7 +15,7 @@ DEFAULT_EVENTS_FILE = (
 )
 DEFAULT_OUT_DIR = Path("strategy_recommended_runner") / "outputs" / "livermore_key_levels"
 PARQUET_DIR = Path("a_stock_data") / "parquet"
-KEY_LEVEL = 100.0
+KEY_LEVEL = 50.0
 
 
 def load_events(path: Path) -> pd.DataFrame:
@@ -103,15 +103,15 @@ def score_candidates(candidates: pd.DataFrame) -> pd.DataFrame:
     add_score(scored["成交量放大_bool"], 3, "放量+3")
     add_score(scored["D0涨幅%"].ge(5.0) & scored["D0涨幅%"].lt(15.0), 3, "D0涨幅5-15%+3")
     add_score(scored["D0涨幅%"].ge(15.0) & scored["D0涨幅%"].lt(20.0), 1, "D0涨幅15-20%+1")
-    add_score(scored["收盘价"].ge(100.0) & scored["收盘价"].le(108.0), 3, "收盘100-108+3")
-    add_score(scored["收盘价"].gt(108.0) & scored["收盘价"].le(115.0), 1, "收盘108-115+1")
-    add_score(scored["最低价"].ge(100.0), 2, "最低守住100+2")
+    add_score(scored["收盘价"].ge(50.0) & scored["收盘价"].le(54.0), 3, "收盘50-54+3")
+    add_score(scored["收盘价"].gt(54.0) & scored["收盘价"].le(57.5), 1, "收盘54-57.5+1")
+    add_score(scored["最低价"].ge(50.0), 2, "最低守住50+2")
     add_score((scored["最高价"] / scored["收盘价"]).le(1.05), 2, "上影小+2")
 
     has_next_open = scored["次日开盘"].notna()
     next_open = pd.to_numeric(scored["次日开盘"], errors="coerce")
     next_gap = pd.to_numeric(scored["次日开盘相对D0收盘%"], errors="coerce")
-    add_score(has_next_open & next_open.ge(KEY_LEVEL), 5, "次日开盘>=100+5")
+    add_score(has_next_open & next_open.ge(KEY_LEVEL), 5, "次日开盘>=50+5")
     add_score(has_next_open & next_gap.ge(-1.0) & next_gap.le(5.0), 3, "次日开盘温和+3")
     add_score(has_next_open & next_gap.gt(8.0), -3, "次日高开>8%-3")
 
@@ -227,7 +227,7 @@ def print_ranked_preview(ranked: pd.DataFrame, top_n: int) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="导出利弗莫尔100关键点首次突破的单日候选。")
+    parser = argparse.ArgumentParser(description="导出利弗莫尔50关键点首次突破的单日候选。")
     parser.add_argument("--date", default=date.today().strftime("%Y-%m-%d"), help="信号日，格式 YYYY-MM-DD")
     parser.add_argument("--events-file", type=Path, default=DEFAULT_EVENTS_FILE)
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
@@ -253,16 +253,16 @@ def main() -> None:
     ranked = score_candidates(candidates) if not candidates.empty else candidates
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
-    out_csv = args.out_dir / f"key_level_100_breakout_candidate_{args.date}.csv"
+    out_csv = args.out_dir / f"key_level_50_breakout_candidate_{args.date}.csv"
     if ranked.empty:
         ranked.to_csv(out_csv, index=False, encoding="utf-8-sig")
     else:
         ranked[output_columns(ranked)].to_csv(out_csv, index=False, encoding="utf-8-sig", float_format="%.4f")
 
     print(f"信号日期: {args.date}")
-    print("策略: 利弗莫尔100关键点首次突破；收盘确认突破；趋势=up")
-    print("买入: 下一交易日开盘必须仍在100以上；若本地无次日行情，则开盘前人工确认")
-    print("卖出: 跌破100卖出；15%止盈；从最高价回撤7%保护；最多持有10个交易日")
+    print("策略: 利弗莫尔50关键点首次突破；收盘确认突破；趋势=up")
+    print("买入: 下一交易日开盘必须仍在50以上；若本地无次日行情，则开盘前人工确认")
+    print("卖出: 跌破50卖出；15%止盈；从最高价回撤7%保护；最多持有10个交易日")
     print(f"候选数: {len(ranked)}")
 
     if ranked.empty:
@@ -272,16 +272,16 @@ def main() -> None:
         first = ranked.iloc[0]
         print()
         if first["是否可买"] == "否":
-            print("结论: 排名第一的次日开盘低于100，不买。")
+            print("结论: 排名第一的次日开盘低于50，不买。")
         elif first["是否可买"] == "待确认":
             print(
                 f"预选第一名: {first['股票代码']} {first['股票名称']}。"
-                "次日开盘数据未确认，开盘必须 >=100 才买。"
+                "次日开盘数据未确认，开盘必须 >=50 才买。"
             )
         else:
             print(
                 f"最符合: {first['股票代码']} {first['股票名称']}，"
-                f"次日开盘 {float(first['次日开盘']):.2f} >= 100，可作为买入候选。"
+                f"次日开盘 {float(first['次日开盘']):.2f} >= 50，可作为买入候选。"
             )
     print(f"已保存: {out_csv.resolve()}")
 
